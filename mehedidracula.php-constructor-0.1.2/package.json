@@ -1,0 +1,88 @@
+{
+	"name": "php-constructor",
+	"displayName": "PHP Constructor",
+	"description": "Initialize php constructor properties",
+	"version": "0.1.2",
+	"publisher": "MehediDracula",
+	"author": "Mehedi Hassan <MehediDracula@gmail.com>",
+	"license": "SEE LICENSE IN LICENSE",
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"php",
+		"class",
+		"constructor"
+	],
+	"galleryBanner": {
+		"color": "#0f1419",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"onLanguage:php",
+		"onCommand:phpConstructor.insert"
+	],
+	"main": "./src/extension",
+	"icon": "images/icon.png",
+	"contributes": {
+		"commands": [
+			{
+				"command": "phpConstructor.insert",
+				"title": "Insert Constructor Property"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "PHP constructor extension configurations",
+			"properties": {
+				"phpConstructor.visibility": {
+					"type": "string",
+					"default": "protected",
+					"enum": [
+						"public",
+						"protected",
+						"private"
+					],
+					"description": "Default property visibility modifier"
+				},
+				"phpConstructor.constructorVisibility": {
+					"type": "string",
+					"default": "public",
+					"enum": [
+						"public",
+						"protected",
+						"private"
+					],
+					"description": "Default constructor visibility modifier"
+				},
+				"phpConstructor.choosePropertyVisibility": {
+					"type": "boolean",
+					"default": false,
+					"description": "Choose property visibility modifier in snippet"
+				},
+				"phpConstructor.chooseConstructorVisibility": {
+					"type": "boolean",
+					"default": false,
+					"description": "Choose constructor visibility modifier in snippet"
+				}
+			}
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MehediDracula/PHP-Constructor"
+	},
+	"bugs": {
+		"url": "https://github.com/MehediDracula/PHP-Constructor/issues"
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"vscode": "^1.1.6"
+	},
+	"__metadata": {}
+}
